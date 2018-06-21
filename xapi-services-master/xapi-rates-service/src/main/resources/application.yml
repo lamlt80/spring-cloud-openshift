@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: xapi-rate-service
+
+server:
+  port: 8888
+
+xapi-gateway:
+  ribbon:
+    eureka:
+      enabled: false    
+    listOfServers: xapi-gateway:8888
+
+
+    

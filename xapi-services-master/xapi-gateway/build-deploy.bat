@@ -1,0 +1,1 @@
+call ..\build-deploy-windows.bat . xapi-gateway

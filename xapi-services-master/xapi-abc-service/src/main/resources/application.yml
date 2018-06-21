@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: xapi-abc-service
+
+server:
+  port: 8090

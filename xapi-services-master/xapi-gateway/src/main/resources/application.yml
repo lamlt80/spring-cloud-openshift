@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: xapi-gateway
+
+server:
+  port: 8888
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    xapi-rate-service:
+      path: /rate/**
+      url: http://xapi-rate-service:8888
+      retryable: true
+    xapi-ret-service:
+      path: /ret/**
+      url: http://xapi-ret-service:8888/
+      
+ribbon:
+  eureka:
+    enabled: false
+
+      
