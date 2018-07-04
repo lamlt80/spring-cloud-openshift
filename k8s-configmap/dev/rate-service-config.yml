@@ -1,0 +1,22 @@
+spring:
+  profiles: dev
+  
+  application:
+    name: xapi-rate-service
+    
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource # Will be removed if using spring boot v2
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@//10.0.2.2:1521/study # This IP adress - 10.0.2.2 is 'localhost' of Windows host when we call from inside virtualbox
+    username: study
+    password: ${DB_STUDY} # Env variable created when create container using deployemnt config or pod config
+
+server:
+  port: 8888
+
+xapi-gateway:
+  ribbon:
+    eureka:
+      enabled: false    
+    listOfServers: xapi-gateway:8888
+    

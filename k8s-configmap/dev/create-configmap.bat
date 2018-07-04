@@ -1,0 +1,1 @@
+oc create configmap rate-service-config --from-file=./rate-service-config.yml
